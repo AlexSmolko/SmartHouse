@@ -1,0 +1,80 @@
+Класс Flooding Sensor
+
+1). Чертёж
+
+Состояние
+—status: Boolean;
+—alertConnect: Boolean;
+—address: Number;
+—tempLevel: Number;
+
+Поведение
+—getStatus(): String;
+—on(): Void;
+—off(): Void;
+—connect(): Void;
+—disconnect(): Void;
+—getAlertConnect(): String;
+—getAddress(): Number;
+—setAddress(); Number;
+
+________________________________________________________________________________
+
+2). Реализация
+
+function FloodingSensor(address, tempLevel) {
+    this._status = false;
+    this._alertConnect = false;
+    this._address = address;
+    this.tempLevel = tempLevel;
+}
+
+FloodingSensor.prototype.getStatus = function () {
+  return this._status ? "on" : "off";
+};
+
+FloodingSensor.prototype.on = function () {
+  this._status = true;
+  return;
+};
+
+FloodingSensor.prototype.off = function () {
+  this._status = false;
+  return;
+};
+
+FloodingSensor.prototype.connect = function () {
+   this._alertConnect = true;
+   return;
+};
+
+FloodingSensor.prototype.disconnect = function () {
+    this._alertConnect = false;
+    return;
+};
+
+FloodingSensor.prototype.getAlertConnect = function (tempLevel) {
+    this.tempLevel = Number(prompt("Enter temperature"));
+    if (this.tempLevel < 0) {
+        console.log("At this temperature level flooding impossible");
+    } else {
+        console.log("Flooding is possible at this temperature level");
+    };
+    return this._alertConnect ? "Alert! Connect with water!" :
+    "The water level lower than initial critical point!"
+};
+
+FloodingSensor.prototype.getAddress = function (_address) {
+    this._address = address;
+    var addressArr = [1, 4, 6, 12, 45, 89];
+    address = addressArr[4];
+    return _address;
+};
+
+FloodingSensor.prototype.setAddress = function (_address) {
+     this.address = address;
+     var setAddress = Number(prompt("Input address here"));
+     address = setAddress;
+     return _address;
+};
+var myFloodingSensor = new FloodingSensor("address1","tempLevel1");
