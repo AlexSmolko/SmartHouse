@@ -65,8 +65,10 @@ FloodingSensor.prototype.getAddress = function () {
 
 FloodingSensor.prototype.setAddress = function (address) {
      this._address = address;
-     var setAddressArr = [1, 4, 6, 12, 45, 89];
-     address = setAddressArr[4];
-     return _address;
+     let setAddressArr = [1, 4, 6, 12, 45, 89];
+     if (setAddressArr != NULL){
+        address = setAddressArr[4];
+     }   
+   };
 };
 var myFloodingSensor = new FloodingSensor("address1","tempLevel1");
