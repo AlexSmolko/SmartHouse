@@ -3,12 +3,14 @@
 1). Чертёж
 
 Состояние
+—name: String;
 —status: Boolean;
 —alertConnect: Boolean;
 —address: Number;
 —tempLevel: Number;
 
 Поведение
+—getName(): String;
 —getStatus(): String;
 —on(): Void;
 —off(): Void;
@@ -17,16 +19,21 @@
 —getAlertConnect(): String;
 —getAddress(): Number;
 —setAddress(): Number;
---receiveTempLevel(): Number;
+—receiveTempLevel(): Number;
 ________________________________________________________________________________
 
 2). Реализация
 
 function FloodingSensor(address, tempLevel) {
+    this._name = name;
     this._status = false;
     this._alertConnect = false;
     this._address = address;
     this._tempLevel = tempLevel;
+}
+
+FloodingSensor.prototype.getName = function () {
+  return this._name;
 }
 
 FloodingSensor.prototype.getStatus = function () {
@@ -67,4 +74,4 @@ FloodingSensor.prototype.setAddress = function (address) {
      this._address = address;
      }   
 };
-var myFloodingSensor = new FloodingSensor("address1","tempLevel1");
+var myFloodingSensor = new FloodingSensor("address1","tempLevel1","name1");
