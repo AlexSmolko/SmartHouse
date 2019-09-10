@@ -1,15 +1,15 @@
 Класс Flooding Sensor
 
-1). Чертёж
+1). Plan
 
-Состояние
+State
 —name: String;
 —status: Boolean;
 —alertConnect: Boolean;
 —address: Number;
 —tempLevel: Number;
 
-Поведение
+Behavior
 —getName(): String;
 —getStatus(): String;
 —on(): Void;
@@ -22,7 +22,7 @@
 —receiveTempLevel(): Number;
 ________________________________________________________________________________
 
-2). Реализация
+2). Realization
 
 function FloodingSensor(address, tempLevel) {
     this._name = name;
