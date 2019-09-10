@@ -34,7 +34,7 @@ function FloodingSensor(address, tempLevel) {
 
 FloodingSensor.prototype.getName = function () {
   return this._name;
-}
+};
 
 FloodingSensor.prototype.getStatus = function () {
   return this._status ? "on" : "off";
@@ -72,6 +72,6 @@ FloodingSensor.prototype.getAddress = function () {
 
 FloodingSensor.prototype.setAddress = function (address) {
      this._address = address;
-     }   
-};
+ };   
+
 var myFloodingSensor = new FloodingSensor("address1","tempLevel1","name1");
