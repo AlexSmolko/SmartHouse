@@ -24,7 +24,7 @@ ________________________________________________________________________________
 
 2). Realization
 
-function FloodingSensor(address, tempLevel) {
+function FloodingSensor extends Devices(address, tempLevel) {
     this._name = name;
     this._status = false;
     this._alertConnect = false;
